@@ -1,0 +1,660 @@
+/* ==========================================================================
+   RESET Y ESTILOS GENERALES
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', 'Arial', sans-serif;
+
+    background-color: #f0f4f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+
+/* ==========================================================================
+   TARJETA PRINCIPAL
+   ========================================================================== */
+
+.card {
+    background-color: #ffffff;
+
+    width: 90%;
+    max-width: 600px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05);
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   MENÚ
+   ========================================================================== */
+
+.nav {
+    width: 100%;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f0f4f8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.08);
+    border-color: #222222;
+}
+
+.nav-list {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+.nav-link {
+    color: #777777;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    padding-bottom: 5px;
+
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #222222;
+}
+
+.nav-link.active {
+    color: #222222;
+
+    border-bottom: 2px solid #222222;
+}
+
+
+/* ==========================================================================
+   AVATAR
+   ========================================================================== */
+
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 4px solid #f0f4f8;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* ==========================================================================
+   NOMBRE
+   ========================================================================== */
+
+.name {
+    color: #222222;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   PROFESIÓN
+   ========================================================================== */
+
+.profession {
+    color: #777777;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   LÍNEA DECORATIVA
+   ========================================================================== */
+
+.divider {
+    width: 60px;
+
+    border: 0;
+
+    border-top: 3px solid #222222;
+
+    margin: 30px auto;
+}
+
+
+/* ==========================================================================
+   BIOGRAFÍA
+   ========================================================================== */
+
+.bio {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #666666;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   REDES SOCIALES
+   ========================================================================== */
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.social-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    color: #555555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #222222;
+
+    color: #ffffff;
+
+    border-color: #222222;
+
+    transform: translateY(-2px);
+}
+
+.icon {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* ==========================================================================
+   SECCIONES PROYECTOS Y CONTACTO
+   ========================================================================== */
+
+.extra-section {
+    margin-top: 60px;
+
+    padding-top: 40px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.extra-section h2 {
+    font-size: 28px;
+
+    color: #222222;
+
+    margin-bottom: 12px;
+}
+
+.extra-section p {
+    color: #666666;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   BOTÓN CONTACTO
+   ========================================================================== */
+
+.contact-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    background-color: #222222;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #000000;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE - CELULARES
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+
+        align-items: flex-start;
+    }
+
+    .card {
+        width: 100%;
+
+        padding: 25px 20px;
+
+        margin: 10px 0;
+    }
+
+    .nav {
+        margin-bottom: 35px;
+    }
+
+    .nav-list {
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .avatar-wrapper {
+        width: 125px;
+        height: 125px;
+    }
+
+    .name {
+        font-size: 34px;
+    }
+
+    .profession {
+        font-size: 15px;
+    }
+
+    .bio {
+        font-size: 15px;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+
+    .social-btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   1. RESET Y CONFIGURACIÓN BASE
+   ========================================================================== */
+
+/* El selector universal (*) aplica estas reglas a TODOS los elementos de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Asegura que el padding y los bordes no aumenten el ancho total de los elementos */
+}
+
+/* ==========================================================================
+   2. ESTILOS DEL CUERPO (BODY) Y CENTRADO DE LA PÁGINA
+   ========================================================================== */
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ebf0f7;
+    /* Color de fondo grisáceo suave */
+    color: #1a2a44;
+    /* Color de texto principal */
+
+    /* CENTRADO PERFECTO CON FLEXBOX */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+
+    min-height: 100vh;
+    /* Ocupa mínimo el 100% de la altura de la pantalla */
+    padding: 24px 16px;
+    /* Espacio de resguardo para que la tarjeta no pegue a los bordes en móviles */
+}
+
+/* ==========================================================================
+   3. CONTENEDOR PRINCIPAL (LA TARJETA O CARD)
+   ========================================================================== */
+.card {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    width: 100%;
+    max-width: 520px;
+    /* Ancho máximo en pantallas de computadora */
+    border-radius: 24px;
+    /* Bordes redondeados */
+    box-shadow: 0 10px 35px rgba(26, 42, 68, 0.08);
+    /* Sombra suave para dar efecto de elevación */
+    padding: 32px 36px 40px;
+    /* Espaciado interno: arriba, lados, abajo */
+
+    /* Alineación de los elementos internos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra los elementos hijos al centro */
+    text-align: center;
+    /* Centra los textos */
+}
+
+/* ==========================================================================
+   4. MENÚ DE NAVEGACIÓN SUPERIOR
+   ========================================================================== */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los enlaces a la derecha */
+    margin-bottom: 24px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    /* Quita las viñetas/puntos de la lista */
+    gap: 24px;
+    /* Espacio entre cada opción del menú */
+}
+
+.nav-link {
+    text-decoration: none;
+    /* Quita el subrayado típico de los enlaces */
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #4f46e5;
+    /* Color al pasar el cursor */
+}
+
+/* Estilo para la opción activa ("Inicio") */
+.nav-link.active {
+    color: #1e293b;
+    border-bottom: 3px solid #6366f1;
+    /* Línea púrpura inferior */
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   5. SECCIÓN DE PERFIL (AVATAR, NOMBRE Y CARGO)
+   ========================================================================== */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del avatar con halo circular de fondo */
+.avatar-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    /* Transforma el cuadrado en un círculo perfecto */
+    background: #dbeafe;
+    /* Color de fondo sutil detrás de la foto */
+    padding: 6px;
+    /* Grosor del aro exterior */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.12);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Imagen redonda */
+    object-fit: cover;
+    /* Evita que la foto se deforme o estire */
+    display: block;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0b1a30;
+    /* Azul marino oscuro */
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.profession {
+    font-size: 15px;
+    font-weight: 500;
+    color: #475569;
+    /* Gris azulado */
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   6. LÍNEA DIVISORIA DECORATIVA
+   ========================================================================== */
+.divider {
+    width: 44px;
+    height: 3px;
+    background-color: #93c5fd;
+    /* Celeste suave */
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   7. DESCRIPCIÓN O BIOGRAFÍA
+   ========================================================================== */
+.bio {
+    font-size: 14px;
+    line-height: 1.6;
+    /* Altura de línea para facilitar la lectura */
+    color: #4b5563;
+    max-width: 400px;
+    margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   8. BOTONES DE REDES SOCIALES
+   ========================================================================== */
+.social-links {
+    width: 100%;
+    max-width: 290px;
+    /* Ancho de los botones */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Separación uniforme entre cada botón */
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    /* Espacio entre el ícono y el texto */
+    padding: 12px 20px;
+    border: 1.5px solid #c7d2fe;
+    /* Borde violeta suave */
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    background-color: #ffffff;
+    color: #1e1b4b;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Color específico para cada ícono */
+.icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.icon-instagram {
+    color: #4f46e5;
+}
+
+.icon-linkedin {
+    color: #3b82f6;
+}
+
+.icon-whatsapp {
+    color: #2563eb;
+}
+
+/* Efecto al pasar el mouse por encima del botón (Hover) */
+.social-btn:hover {
+    background-color: #f5f7ff;
+    border-color: #6366f1;
+    color: #4338ca;
+    transform: translateY(-2px);
+    /* Pequeña elevación */
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.social-btn:hover .icon {
+    transform: scale(1.1);
+    /* El ícono se agranda sutilmente */
+}
+
+/* ==========================================================================
+   9. ADAPTABILIDAD A PANTALLAS PEQUEÑAS (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .card {
+        padding: 24px 20px 32px;
+        border-radius: 20px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .profession {
+        font-size: 14px;
+    }
+
+    .bio {
+        font-size: 13.5px;
+    }
+
+    .social-links {
+        max-width: 100%;
+    }
+}
