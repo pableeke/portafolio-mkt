@@ -65,37 +65,15 @@ body {
 .nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 32px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-logo-img {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--body-bg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
-}
-
-.nav-logo-img:hover {
-    transform: scale(1.08);
-    border-color: var(--primary);
 }
 
 .nav-list {
     display: flex;
     list-style: none;
     gap: 28px;
-    margin-left: auto;
 }
 
 .nav-link {
