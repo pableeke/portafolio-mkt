@@ -1,19 +1,30 @@
 /* ==========================================================================
-   VARIABLES Y CONFIGURACIÓN GLOBAL
+   VARIABLES Y CONFIGURACIÓN GLOBAL (PALETA AZUL Y AMARILLO)
    ========================================================================== */
 :root {
-    --primary: #5548ea;
-    --primary-hover: #4335da;
-    --primary-light: #f7f5ff;
-    --primary-bubble: #e8e3ff;
-    --text-title: #1e293b;
-    --text-muted: #64748b;
-    --text-body: #475569;
-    --border-color: #e2e8f0;
-    --border-subtle: #f1f3f7;
-    --card-bg: #ffffff;
-    --body-bg: #ebf0f7;
-    --shadow-card: 0 12px 40px rgba(26, 42, 68, 0.07);
+    /* Azules */
+    --primary: #1d4ed8;            /* Azul vibrante elegante */
+    --primary-dark: #1e3a8a;       /* Azul marino profundo */
+    --primary-hover: #172554;      /* Azul noche para contrastes */
+    --primary-light: #f0f7ff;      /* Fondo azul cielo muy suave */
+    --primary-bubble: #dbeafe;     /* Azul claro para aros e iconos */
+
+    /* Amarillos */
+    --accent: #eab308;             /* Amarillo oro brillante */
+    --accent-hover: #ca8a04;       /* Amarillo dorado oscuro para hover */
+    --accent-light: #fefce8;       /* Amarillo crema sutil */
+    --accent-bubble: #fef08a;      /* Amarillo suave para iconos */
+
+    /* Textos y neutros */
+    --text-title: #0f172a;         /* Azul marino muy oscuro */
+    --text-muted: #64748b;         /* Gris azulado elegante */
+    --text-body: #334155;          /* Gris pizarra de alta legibilidad */
+    
+    --border-color: #cbd5e1;       /* Bordes de inputs */
+    --border-subtle: #f1f5f9;      /* Divisores entre proyectos */
+    --card-bg: #ffffff;            /* Blanco puro para tarjeta central */
+    --body-bg: #f1f5f9;            /* Fondo exterior gris azulado */
+    --shadow-card: 0 14px 40px rgba(15, 23, 42, 0.08);
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -87,12 +98,12 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--text-title);
+    color: var(--primary-dark);
 }
 
-/* Pestaña activa con línea púrpura inferior */
+/* Pestaña activa con línea amarilla inferior */
 .nav-link.active {
-    color: var(--primary);
+    color: var(--primary-dark);
     font-weight: 600;
 }
 
@@ -102,8 +113,8 @@ body {
     bottom: -2px;
     left: 0;
     width: 100%;
-    height: 2.5px;
-    background-color: var(--primary);
+    height: 3px;
+    background-color: var(--accent);
     border-radius: 2px;
 }
 
@@ -125,13 +136,13 @@ body {
     display: inline-block;
 }
 
-/* Pequeña barra púrpura decorativa bajo la primera palabra */
+/* Barra amarilla decorativa bajo el título */
 .section-title::after {
     content: '';
     display: block;
     width: 32px;
     height: 3.5px;
-    background-color: var(--primary);
+    background-color: var(--accent);
     border-radius: 2px;
     margin-top: 8px;
 }
@@ -153,7 +164,7 @@ body {
     border-radius: 50%;
     background: #dbeafe;
     padding: 5px;
-    box-shadow: 0 4px 14px rgba(85, 72, 234, 0.12);
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.15);
 }
 
 .avatar {
@@ -179,10 +190,11 @@ body {
     margin-bottom: 18px;
 }
 
+/* Línea divisoria en amarillo */
 .divider {
     width: 45px;
     height: 3px;
-    background-color: #93c5fd;
+    background-color: var(--accent);
     border: none;
     border-radius: 2px;
     margin: 0 auto 18px;
@@ -211,10 +223,10 @@ body {
     justify-content: center;
     gap: 12px;
     padding: 12px 20px;
-    border: 1.5px solid #c7d2fe;
+    border: 1.5px solid #bfdbfe;
     border-radius: 12px;
     background-color: #ffffff;
-    color: #1e1b4b;
+    color: var(--primary-dark);
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -226,7 +238,7 @@ body {
     border-color: var(--primary);
     color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(85, 72, 234, 0.15);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.15);
 }
 
 .social-btn .icon {
@@ -307,10 +319,12 @@ body {
 
 .project-link:hover {
     gap: 10px;
-    color: var(--primary-hover);
+    color: var(--accent-hover);
 }
 
 .project-link .arrow {
+    color: var(--accent);
+    font-weight: bold;
     transition: transform 0.2s ease;
 }
 
@@ -325,7 +339,8 @@ body {
     overflow: hidden;
     flex-shrink: 0;
     background-color: var(--primary-light);
-    box-shadow: 0 4px 16px rgba(85, 72, 234, 0.06);
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
 }
 
 .project-img {
@@ -347,7 +362,7 @@ body {
     display: grid;
     grid-template-columns: 1.15fr 0.95fr;
     gap: 40px;
-    align-items: start;
+    align-items: center;
     width: 100%;
 }
 
@@ -394,7 +409,7 @@ body {
 .form-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3.5px rgba(85, 72, 234, 0.12);
+    box-shadow: 0 0 0 3.5px rgba(29, 78, 216, 0.15);
 }
 
 .form-textarea {
@@ -407,7 +422,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: #ffffff;
     border: none;
     border-radius: 9px;
@@ -421,64 +436,59 @@ body {
     transition: var(--transition);
 }
 
-.btn-submit:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(85, 72, 234, 0.32);
-}
-
 .btn-submit .btn-icon {
     width: 17px;
     height: 17px;
+    color: var(--accent);
+    transition: color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent);
+    color: var(--text-title);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
+}
+
+.btn-submit:hover .btn-icon {
+    color: var(--text-title);
 }
 
 /* Columna Derecha de Contacto */
 .contact-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 22px;
-}
-
-.contact-illustration-wrap {
-    width: 100%;
-    max-width: 250px;
-    display: flex;
     justify-content: center;
-}
-
-.contact-illustration {
-    width: 100%;
-    height: auto;
-    max-height: 220px;
-    object-fit: contain;
-    border-radius: 14px;
+    align-items: center;
+    height: 100%;
 }
 
 .direct-contact-card {
     width: 100%;
-    background-color: var(--primary-light);
-    border-radius: 14px;
-    padding: 18px 20px;
+    background: linear-gradient(145deg, #f0f7ff 0%, #fefce8 100%);
+    border-radius: 16px;
+    padding: 26px 22px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     text-align: left;
-    border: 1px solid rgba(85, 72, 234, 0.08);
+    border: 1.5px solid #bfdbfe;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
     transition: var(--transition);
 }
 
 .direct-contact-card:hover {
-    box-shadow: 0 4px 16px rgba(85, 72, 234, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.12);
     transform: translateY(-2px);
 }
 
 .direct-contact-icon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: var(--primary-bubble);
-    color: var(--primary);
+    background-color: var(--accent-bubble);
+    color: var(--primary-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -486,14 +496,14 @@ body {
 }
 
 .direct-contact-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
 }
 
 .direct-contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
 .direct-contact-label {
@@ -503,9 +513,9 @@ body {
 }
 
 .direct-contact-email {
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-dark);
     text-decoration: none;
     transition: color 0.2s;
     word-break: break-all;
@@ -513,7 +523,7 @@ body {
 
 .direct-contact-email:hover {
     text-decoration: underline;
-    color: var(--primary-hover);
+    color: var(--accent-hover);
 }
 
 .direct-contact-note {
@@ -557,7 +567,7 @@ body {
 
     .project-media {
         width: 100%;
-        height: 190px;
+        height: 200px;
     }
 
     .project-name {
@@ -567,7 +577,7 @@ body {
     /* Contacto en móvil */
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
     }
 
     .btn-submit {
@@ -575,10 +585,6 @@ body {
     }
 
     .contact-right {
-        margin-top: 10px;
-    }
-
-    .contact-illustration-wrap {
-        max-width: 200px;
+        margin-top: 6px;
     }
 }
