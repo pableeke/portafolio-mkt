@@ -1,7 +1,25 @@
 /* ==========================================================================
-   RESET Y ESTILOS GENERALES
+   VARIABLES Y CONFIGURACIÓN GLOBAL
    ========================================================================== */
+:root {
+    --primary: #5548ea;
+    --primary-hover: #4335da;
+    --primary-light: #f7f5ff;
+    --primary-bubble: #e8e3ff;
+    --text-title: #1e293b;
+    --text-muted: #64748b;
+    --text-body: #475569;
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f3f7;
+    --card-bg: #ffffff;
+    --body-bg: #ebf0f7;
+    --shadow-card: 0 12px 40px rgba(26, 42, 68, 0.07);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+/* ==========================================================================
+   RESET BASE
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -9,51 +27,47 @@
 }
 
 body {
-    font-family: 'Outfit', 'Arial', sans-serif;
-
-    background-color: #f0f4f8;
-
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-title);
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-height: 100vh;
-
-    padding: 20px;
+    padding: 24px 16px;
 }
 
-
 /* ==========================================================================
-   TARJETA PRINCIPAL
+   CONTENEDOR PRINCIPAL (CARD)
    ========================================================================== */
-
 .card {
-    background-color: #ffffff;
-
-    width: 90%;
-    max-width: 600px;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.05);
-
-    padding: 40px;
-
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 520px;
+    border-radius: 22px;
+    box-shadow: var(--shadow-card);
+    padding: 36px 40px 42px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    transition: var(--transition);
 }
 
+/* Para páginas con contenido horizontal amplio (Proyectos y Contacto) */
+.card-wide {
+    max-width: 840px;
+    text-align: left;
+}
 
 /* ==========================================================================
-   MENÚ
+   MENÚ DE NAVEGACIÓN SUPERIOR
    ========================================================================== */
-
 .nav {
     width: 100%;
-    margin-bottom: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 32px;
 }
 
 .nav-logo {
@@ -67,471 +81,115 @@ body {
     height: 38px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #f0f4f8;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 2px solid var(--body-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
 }
 
 .nav-logo-img:hover {
     transform: scale(1.08);
-    border-color: #222222;
+    border-color: var(--primary);
 }
 
 .nav-list {
     display: flex;
-
-    justify-content: flex-end;
-    align-items: center;
-
-    gap: 25px;
-
     list-style: none;
+    gap: 28px;
+    margin-left: auto;
 }
 
 .nav-link {
-    color: #777777;
-
     text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 400;
-
+    color: var(--text-muted);
+    font-size: 14.5px;
+    font-weight: 500;
     padding-bottom: 5px;
-
-    transition: all 0.3s ease;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #222222;
+    color: var(--text-title);
 }
 
+/* Pestaña activa con línea púrpura inferior */
 .nav-link.active {
-    color: #222222;
-
-    border-bottom: 2px solid #222222;
-}
-
-
-/* ==========================================================================
-   AVATAR
-   ========================================================================== */
-
-.avatar-wrapper {
-    width: 150px;
-    height: 150px;
-
-    margin: 0 auto 25px;
-
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    border: 4px solid #f0f4f8;
-}
-
-.avatar {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-}
-
-
-/* ==========================================================================
-   NOMBRE
-   ========================================================================== */
-
-.name {
-    color: #222222;
-
-    font-size: 42px;
-
-    line-height: 1.1;
-
-    font-weight: 700;
-
-    margin-bottom: 10px;
-}
-
-
-/* ==========================================================================
-   PROFESIÓN
-   ========================================================================== */
-
-.profession {
-    color: #777777;
-
-    font-size: 17px;
-
-    font-weight: 400;
-
-    line-height: 1.5;
-}
-
-
-/* ==========================================================================
-   LÍNEA DECORATIVA
-   ========================================================================== */
-
-.divider {
-    width: 60px;
-
-    border: 0;
-
-    border-top: 3px solid #222222;
-
-    margin: 30px auto;
-}
-
-
-/* ==========================================================================
-   BIOGRAFÍA
-   ========================================================================== */
-
-.bio {
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    color: #666666;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-
-/* ==========================================================================
-   REDES SOCIALES
-   ========================================================================== */
-
-.social-links {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 30px;
-}
-
-.social-btn {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    padding: 11px 16px;
-
-    border: 1px solid #dddddd;
-
-    border-radius: 10px;
-
-    background-color: #ffffff;
-
-    color: #555555;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: all 0.3s ease;
-}
-
-.social-btn:hover {
-    background-color: #222222;
-
-    color: #ffffff;
-
-    border-color: #222222;
-
-    transform: translateY(-2px);
-}
-
-.icon {
-    width: 19px;
-    height: 19px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 2;
-
-    stroke-linecap: round;
-
-    stroke-linejoin: round;
-}
-
-
-/* ==========================================================================
-   SECCIONES PROYECTOS Y CONTACTO
-   ========================================================================== */
-
-.extra-section {
-    margin-top: 60px;
-
-    padding-top: 40px;
-
-    border-top: 1px solid #eeeeee;
-}
-
-.extra-section h2 {
-    font-size: 28px;
-
-    color: #222222;
-
-    margin-bottom: 12px;
-}
-
-.extra-section p {
-    color: #666666;
-
-    font-size: 15px;
-
-    line-height: 1.6;
-}
-
-
-/* ==========================================================================
-   BOTÓN CONTACTO
-   ========================================================================== */
-
-.contact-btn {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 12px 20px;
-
-    border-radius: 10px;
-
-    background-color: #222222;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-    background-color: #000000;
-
-    transform: translateY(-2px);
-}
-
-
-/* ==========================================================================
-   RESPONSIVE - CELULARES
-   ========================================================================== */
-
-@media (max-width: 600px) {
-
-    body {
-        padding: 12px;
-
-        align-items: flex-start;
-    }
-
-    .card {
-        width: 100%;
-
-        padding: 25px 20px;
-
-        margin: 10px 0;
-    }
-
-    .nav {
-        margin-bottom: 35px;
-    }
-
-    .nav-list {
-        justify-content: center;
-
-        gap: 18px;
-    }
-
-    .nav-link {
-        font-size: 13px;
-    }
-
-    .avatar-wrapper {
-        width: 125px;
-        height: 125px;
-    }
-
-    .name {
-        font-size: 34px;
-    }
-
-    .profession {
-        font-size: 15px;
-    }
-
-    .bio {
-        font-size: 15px;
-    }
-
-    .social-links {
-        flex-direction: column;
-    }
-
-    .social-btn {
-        width: 100%;
-    }
-}
-
-/* ==========================================================================
-   1. RESET Y CONFIGURACIÓN BASE
-   ========================================================================== */
-
-/* El selector universal (*) aplica estas reglas a TODOS los elementos de la página */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* Asegura que el padding y los bordes no aumenten el ancho total de los elementos */
-}
-
-/* ==========================================================================
-   2. ESTILOS DEL CUERPO (BODY) Y CENTRADO DE LA PÁGINA
-   ========================================================================== */
-body {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #ebf0f7;
-    /* Color de fondo grisáceo suave */
-    color: #1a2a44;
-    /* Color de texto principal */
-
-    /* CENTRADO PERFECTO CON FLEXBOX */
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
-
-    min-height: 100vh;
-    /* Ocupa mínimo el 100% de la altura de la pantalla */
-    padding: 24px 16px;
-    /* Espacio de resguardo para que la tarjeta no pegue a los bordes en móviles */
-}
-
-/* ==========================================================================
-   3. CONTENEDOR PRINCIPAL (LA TARJETA O CARD)
-   ========================================================================== */
-.card {
-    background-color: #ffffff;
-    /* Fondo blanco */
-    width: 100%;
-    max-width: 520px;
-    /* Ancho máximo en pantallas de computadora */
-    border-radius: 24px;
-    /* Bordes redondeados */
-    box-shadow: 0 10px 35px rgba(26, 42, 68, 0.08);
-    /* Sombra suave para dar efecto de elevación */
-    padding: 32px 36px 40px;
-    /* Espaciado interno: arriba, lados, abajo */
-
-    /* Alineación de los elementos internos */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centra los elementos hijos al centro */
-    text-align: center;
-    /* Centra los textos */
-}
-
-/* ==========================================================================
-   4. MENÚ DE NAVEGACIÓN SUPERIOR
-   ========================================================================== */
-.nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* Alinea los enlaces a la derecha */
-    margin-bottom: 24px;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    /* Quita las viñetas/puntos de la lista */
-    gap: 24px;
-    /* Espacio entre cada opción del menú */
-}
-
-.nav-link {
-    text-decoration: none;
-    /* Quita el subrayado típico de los enlaces */
-    color: #1e293b;
-    font-size: 14px;
+    color: var(--primary);
     font-weight: 600;
-    padding-bottom: 4px;
-    transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
-.nav-link:hover {
-    color: #4f46e5;
-    /* Color al pasar el cursor */
-}
-
-/* Estilo para la opción activa ("Inicio") */
-.nav-link.active {
-    color: #1e293b;
-    border-bottom: 3px solid #6366f1;
-    /* Línea púrpura inferior */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--primary);
     border-radius: 2px;
 }
 
 /* ==========================================================================
-   5. SECCIÓN DE PERFIL (AVATAR, NOMBRE Y CARGO)
+   ENCABEZADOS DE SECCIÓN (PROYECTOS Y CONTACTO)
    ========================================================================== */
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.section-header {
+    margin-bottom: 24px;
+    text-align: left;
 }
 
-/* Contenedor del avatar con halo circular de fondo */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-title);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    position: relative;
+    display: inline-block;
+}
+
+/* Pequeña barra púrpura decorativa bajo la primera palabra */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3.5px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
+.section-subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   PÁGINA 1: INICIO (TARJETA DE PERFIL)
+   ========================================================================== */
 .avatar-wrapper {
     width: 140px;
     height: 140px;
+    margin: 10px auto 20px;
     border-radius: 50%;
-    /* Transforma el cuadrado en un círculo perfecto */
     background: #dbeafe;
-    /* Color de fondo sutil detrás de la foto */
-    padding: 6px;
-    /* Grosor del aro exterior */
-    margin-bottom: 20px;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.12);
+    padding: 5px;
+    box-shadow: 0 4px 14px rgba(85, 72, 234, 0.12);
 }
 
 .avatar {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    /* Imagen redonda */
     object-fit: cover;
-    /* Evita que la foto se deforme o estire */
     display: block;
 }
 
 .name {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
-    color: #0b1a30;
-    /* Azul marino oscuro */
+    color: var(--text-title);
     letter-spacing: -0.5px;
     margin-bottom: 6px;
 }
@@ -539,46 +197,34 @@ body {
 .profession {
     font-size: 15px;
     font-weight: 500;
-    color: #475569;
-    /* Gris azulado */
-    margin-bottom: 20px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
 }
 
-/* ==========================================================================
-   6. LÍNEA DIVISORIA DECORATIVA
-   ========================================================================== */
 .divider {
-    width: 44px;
+    width: 45px;
     height: 3px;
     background-color: #93c5fd;
-    /* Celeste suave */
+    border: none;
     border-radius: 2px;
-    margin-bottom: 20px;
+    margin: 0 auto 18px;
 }
 
-/* ==========================================================================
-   7. DESCRIPCIÓN O BIOGRAFÍA
-   ========================================================================== */
 .bio {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.6;
-    /* Altura de línea para facilitar la lectura */
-    color: #4b5563;
-    max-width: 400px;
-    margin-bottom: 28px;
+    color: var(--text-body);
+    max-width: 420px;
+    margin: 0 auto 26px;
 }
 
-/* ==========================================================================
-   8. BOTONES DE REDES SOCIALES
-   ========================================================================== */
 .social-links {
     width: 100%;
-    max-width: 290px;
-    /* Ancho de los botones */
+    max-width: 300px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    /* Separación uniforme entre cada botón */
 }
 
 .social-btn {
@@ -586,75 +232,375 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    /* Espacio entre el ícono y el texto */
     padding: 12px 20px;
     border: 1.5px solid #c7d2fe;
-    /* Borde violeta suave */
     border-radius: 12px;
-    /* Esquinas redondeadas */
     background-color: #ffffff;
     color: #1e1b4b;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
-/* Color específico para cada ícono */
-.icon {
+.social-btn:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 72, 234, 0.15);
+}
+
+.social-btn .icon {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
     flex-shrink: 0;
     transition: transform 0.2s ease;
 }
 
-.icon-instagram {
-    color: #4f46e5;
-}
-
-.icon-linkedin {
-    color: #3b82f6;
-}
-
-.icon-whatsapp {
-    color: #2563eb;
-}
-
-/* Efecto al pasar el mouse por encima del botón (Hover) */
-.social-btn:hover {
-    background-color: #f5f7ff;
-    border-color: #6366f1;
-    color: #4338ca;
-    transform: translateY(-2px);
-    /* Pequeña elevación */
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
-}
-
 .social-btn:hover .icon {
     transform: scale(1.1);
-    /* El ícono se agranda sutilmente */
 }
 
 /* ==========================================================================
-   9. ADAPTABILIDAD A PANTALLAS PEQUEÑAS (RESPONSIVE)
+   PÁGINA 2: PROYECTOS (LISTA DIVIDIDA CON IMÁGENES)
    ========================================================================== */
-@media (max-width: 480px) {
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: var(--transition);
+}
+
+.project-item:first-child {
+    padding-top: 10px;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.project-info {
+    flex: 1;
+    text-align: left;
+}
+
+.project-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+.project-desc {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+    max-width: 420px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.project-link:hover {
+    gap: 10px;
+    color: var(--primary-hover);
+}
+
+.project-link .arrow {
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover .arrow {
+    transform: translateX(3px);
+}
+
+.project-media {
+    width: 270px;
+    height: 175px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(85, 72, 234, 0.06);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.project-item:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   PÁGINA 3: CONTACTO (GRID FORMULARIO + TARJETA DIRECTA)
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-title);
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3.5px rgba(85, 72, 234, 0.12);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 26px;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    align-self: flex-start;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(85, 72, 234, 0.32);
+}
+
+.btn-submit .btn-icon {
+    width: 17px;
+    height: 17px;
+}
+
+/* Columna Derecha de Contacto */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.contact-illustration-wrap {
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-illustration {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.direct-contact-card {
+    width: 100%;
+    background-color: var(--primary-light);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    border: 1px solid rgba(85, 72, 234, 0.08);
+    transition: var(--transition);
+}
+
+.direct-contact-card:hover {
+    box-shadow: 0 4px 16px rgba(85, 72, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.direct-contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-bubble);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.direct-contact-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.direct-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.direct-contact-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.direct-contact-email {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+
+.direct-contact-email:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
+}
+
+.direct-contact-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (ADAPTABILIDAD A DISPOSITIVOS MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 16px 12px;
+    }
+
     .card {
-        padding: 24px 20px 32px;
-        border-radius: 20px;
+        padding: 28px 22px 34px;
+        border-radius: 18px;
     }
 
-    .name {
-        font-size: 22px;
+    .nav {
+        margin-bottom: 24px;
     }
 
-    .profession {
-        font-size: 14px;
+    .nav-list {
+        gap: 18px;
     }
 
-    .bio {
+    .nav-link {
         font-size: 13.5px;
     }
 
-    .social-links {
-        max-width: 100%;
+    /* Proyectos en móvil */
+    .project-item {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 16px;
+        padding: 22px 0;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 190px;
+    }
+
+    .project-name {
+        font-size: 18px;
+    }
+
+    /* Contacto en móvil */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+
+    .contact-right {
+        margin-top: 10px;
+    }
+
+    .contact-illustration-wrap {
+        max-width: 200px;
     }
 }
